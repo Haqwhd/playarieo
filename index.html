@@ -24,9 +24,24 @@
 <body>
   <iframe
     src="https://www.youtube.com/embed/" 
+    id="yt-player"
     title="YouTube video player"
     frameBorder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+    <script>
+    // 1. Grab the "?v=" parameter from the URL
+    const params = new URLSearchParams(window.location.search);
+    const videoId = params.get('v');
+
+    // 2. If a video ID exists, attach it to the embed URL
+    if (videoId) {
+      const player = document.getElementById('yt-player');
+      player.src = `https://youtube.com{videoId}`;
+    } else {
+      document.body.innerHTML = '<p style="color: white; background: black; margin: 0; padding: 20px; font-family: sans-serif;">No video ID provided. Add ?v=VIDEO_ID to the URL.</p>';
+    }
+  </script>
 </body>
 </html>
