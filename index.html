@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Playarieo YT video player</title>
+  <title>Document</title>
   <style>
       iframe {
           border: none;
@@ -38,7 +38,7 @@
     // 2. If a video ID exists, attach it to the embed URL
     if (videoId) {
       const player = document.getElementById('yt-player');
-      player.src = `https://youtube.com{videoId}`;
+      player.src = `https://youtube.com/embed/${videoId}`;
     } else {
       document.body.innerHTML = '<p style="color: white; background: black; margin: 0; padding: 20px; font-family: sans-serif;">No video ID provided. Add ?v=VIDEO_ID to the URL.</p>';
     }
